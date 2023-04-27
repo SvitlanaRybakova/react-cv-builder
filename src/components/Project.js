@@ -5,7 +5,7 @@ import { TASKS, TECHNOLOGIES, LINK } from '../constants';
 
 const Project = ({ project }) => {
   return (
-    <div>
+    <div className='project-item'>
       <div className='project-title'>
         <FaReact />
         <span className='project-name'>{project.name}</span>

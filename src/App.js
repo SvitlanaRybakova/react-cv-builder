@@ -26,10 +26,11 @@ function App() {
       <section id='main'>
         <header id='title'>
           <h1>{NAME}</h1>
-          <span class='subtitle'>{JOB_POSITION}</span>
+          <span className='subtitle'>{JOB_POSITION}</span>
         </header>
         {/* summary */}
         <div
+        className='introduction'
           dangerouslySetInnerHTML={{
             __html: INTRODUCTION,
           }}

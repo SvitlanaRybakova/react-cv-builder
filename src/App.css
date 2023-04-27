@@ -63,7 +63,6 @@ li {
   font-size: 10.5pt;
 }
 
-
 .side-bar-item {
   border: 0.5px solid #80808047;
   padding: 4px 6px;
@@ -75,12 +74,11 @@ li {
 .contact-links, .contact-links span {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
-.contact-links a {
-  text-decoration: none;
-  margin-left: 10px;
-  cursor: pointer;
+.contact-links span {
+  margin-right: 10px;
 }
 
 /* main */
@@ -112,6 +110,9 @@ li {
   font-size: 12pt;
 }
 
+.introduction{
+  font-size: 16px;
+}
 /*** categorial blocks ***/
 
 .main-block {
@@ -129,17 +130,6 @@ li {
   color: #000;
 }
 
-#main h2>i {
-  /* use absolute position to prevent icon's width from misaligning title */
-  /* assigning a fixed width here is no better due to needing to align decorator
-     line too */
-  position: absolute;
-  left: var(--main-blocks-title-icon-offset-left);
-  z-index: 1;
-  /* over decorator line */
-  color: #444;
-}
-
 #main h2::after {
   /* extends the decorator line */
   height: calc(var(--row-blocks-padding-top) * 2);
@@ -153,21 +143,6 @@ li {
   line-height: 0;
   font-size: 0;
   content: ' ';
-}
-
-/**** minor tweaks on the icon fonts ****/
-
-#main h2>.fa-graduation-cap {
-  left: calc(var(--main-blocks-title-icon-offset-left) - 2pt);
-  top: 2pt;
-}
-
-#main h2>.fa-suitcase {
-  top: 1pt;
-}
-
-#main h2>.fa-folder-open {
-  top: 1.5pt;
 }
 
 /**** individual row blocks (date - decorator - details) ****/
@@ -260,11 +235,29 @@ li {
 
 .details header {
   color: #000;
+  margin-bottom: 50px;
 }
 
 .details h3 {
   font-size: 13pt;
   font-weight: 100;
+}
+
+.project-item::after {
+  /* border: 1px solid green; */
+  /* extends the decorator line */
+  height: calc(var(--row-blocks-padding-top) * 5);
+  /* position: relative; */
+  /* top: calc(-1 * var(--row-blocks-padding-top)); */
+  /* XXX: 0.5px for aligning fx printing */
+  /* left: calc(-1 * var(--decorator-horizontal-margin)); */
+  display: block;
+  /* border-left: var(--decorator-border); */
+  /* z-index: 0; */
+  /* line-height: 0; */
+  /* font-size: 0; */
+  content: ' ';
+  width: 100%;
 }
 
 /* .main-block:not(.concise) .details div {
@@ -284,6 +277,10 @@ li {
 
 .details .place {
   float: left;
+}
+
+.details h3 {
+  font-weight: bold;
 }
 
 .location {
@@ -354,7 +351,7 @@ li {
 /* experiences  */
 
 .project-header {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   /* text-align: center; */
 }
 
@@ -363,7 +360,6 @@ li {
   align-items: center;
   margin-bottom: 12px;
   margin-top: 25px;
-  /* border: 1px solid red; */
 }
 
 .project-name {

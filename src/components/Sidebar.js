@@ -9,14 +9,18 @@ const Sidebar = ({ title, data }) => {
         {data &&
           data.map((item) =>
             item.src ? (
-              <li className='contact-links'>
-                <span>{item.icon}</span>{' '}
-                <Link target='_blank' to={item.src}>
-                  {item.name}
-                </Link>
-              </li>
+              <Link
+                className='contact-links'
+                target='_blank'
+                to={item.src}
+                key={item.src}
+              >
+                  <span>{item.icon}</span> {item.name}
+              </Link>
             ) : (
-              <p className='side-bar-item'>{item}</p>
+              <p className='side-bar-item' key={item}>
+                {item}
+              </p>
             )
           )}
       </ul>

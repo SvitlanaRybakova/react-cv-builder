@@ -6,20 +6,20 @@ import Project from './Project';
 
 const Experience = ({ data }) => {
   return (
-    <section class='blocks'>
-      <div class='date'>
+    <section className='blocks'>
+      <div className='date'>
         <span>{data.start_date}</span>
         <span>{data.end_date}</span>
       </div>
-      <div class='decorator'></div>
-      <div class='details'>
+      <div className='decorator'></div>
+      <div className='details'>
         <header>
-          <h3 class='place'>{data.company_name}</h3>
-          <span class='location'>
+          <h3 className='place'>{data.company_name}</h3>
+          <span className='location'>
             <ImLocation />
             {data.workplace}
           </span>
-          {data.education && <div class='place'>{data.education}</div>}
+          {data.education && <div className='education'>{data.education}</div>}
         </header>
         <p className='project-header'>Projects:</p>
         <div>
