@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
 :root {
   --page-width: 8.5in;
   --page-height: 11in;
@@ -54,9 +58,29 @@ li {
   /* for disclaimer */
   width: var(--sidebar-width);
   height: 100%;
-  padding: 0.6in var(--sidebar-horizontal-padding);
+  padding: 0 10px;
   background-color: #f2f2f2;
-  font-size: 8.5pt;
+  font-size: 10.5pt;
+}
+
+
+.side-bar-item {
+  border: 0.5px solid #80808047;
+  padding: 4px 6px;
+  margin: 4px 0px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.contact-links, .contact-links span {
+  display: flex;
+  align-items: center;
+}
+
+.contact-links a {
+  text-decoration: none;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 /* main */
@@ -69,14 +93,13 @@ li {
 
 #title {
   position: relative;
-  left: 0.55in;
   margin-bottom: 0.3in;
-  line-height: 1.2;
+  line-height: 2;
 }
 
 #title h1 {
   font-weight: 300;
-  font-size: 18pt;
+  font-size: 25pt;
   line-height: 1.5;
 }
 
@@ -86,13 +109,14 @@ li {
 }
 
 .subtitle {
-  font-size: 8pt;
+  font-size: 12pt;
 }
 
 /*** categorial blocks ***/
 
 .main-block {
-  margin-top: 0.1in;
+  margin-top: 0.5in;
+  /* border: 1px solid red; */
 }
 
 #main h2 {
@@ -100,9 +124,9 @@ li {
   top: var(--row-blocks-padding-top);
   /* XXX: 0.5px for aligning fx printing */
   left: calc((var(--date-block-width) + var(--decorator-horizontal-margin)));
-  font-weight: 400;
-  font-size: 11pt;
-  color: #555;
+  font-weight: 600;
+  font-size: 13pt;
+  color: #000;
 }
 
 #main h2>i {
@@ -239,16 +263,18 @@ li {
 }
 
 .details h3 {
-  font-size: 11pt;
+  font-size: 13pt;
+  font-weight: 100;
 }
 
-.main-block:not(.concise) .details div {
-  margin: 0.18in 0 0.1in 0;
-}
+/* .main-block:not(.concise) .details div {
+  /* margin: 0.18in 0 0.1in 0; */
 
-.main-block:not(.concise) .blocks:last-child .details div {
+/* } */
+
+/* .main-block:not(.concise) .blocks:last-child .details div {
   margin-bottom: 0;
-}
+}  */
 
 .main-block.concise .details div:not(.concise) {
   /* use padding to work around the fact that margin doesn't affect floated
@@ -258,7 +284,12 @@ li {
 
 .details .place {
   float: left;
-  font-size: 9.5pt;
+}
+
+.location {
+  font-size: 11pt;
+  font-style: oblique;
+  font-weight: 400;
 }
 
 .details .location {
@@ -269,23 +300,11 @@ li {
   clear: both;
 }
 
-.details .location::before {
-  display: inline-block;
-  position: relative;
-  right: 3pt;
-  top: 0.25pt;
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  content: "\f041";
-}
-
 /***** fine-tunes on the lists... *****/
 
 #main ul {
   padding-left: 0.07in;
-  margin: 0.08in 0;
+  margin: 0.0 0 0;
 }
 
 #main li {
@@ -318,51 +337,47 @@ li {
 /* sidebar */
 
 #sidebar h1 {
-  font-weight: 400;
   font-size: 11pt;
 }
 
 .side-block {
-  margin-top: 0.5in;
+  margin-top: 33px;
 }
 
-#contact ul {
+.side-block ul {
   margin-top: 0.05in;
   padding-left: 0;
-  font-family: "Source Code Pro";
   font-weight: 400;
   line-height: 1.75;
 }
 
-#contact li>i {
-  width: 9pt;
-  /* for text alignment */
-  text-align: right;
+/* experiences  */
+
+.project-header {
+  margin-top: 50px;
+  /* text-align: center; */
 }
 
-#skills {
-  line-height: 1.5;
+.project-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  margin-top: 25px;
+  /* border: 1px solid red; */
 }
 
-#skills ul {
-  margin: 0.05in 0 0.15in;
-  padding: 0;
+.project-name {
+  margin-left: 10px;
 }
 
-#disclaimer {
-  position: absolute;
-  bottom: var(--sidebar-horizontal-padding);
-  right: var(--sidebar-horizontal-padding);
-  font-size: 7.5pt;
-  font-style: italic;
-  line-height: 1.1;
-  text-align: right;
-  color: #777;
+.technology {
+  border: 0.5px solid #80808047;
+  padding: 4px 10px;
+  margin: 4px;
+  border-radius: 6px;
+  display: inline-block;
 }
 
-#disclaimer code {
-  color: #666;
-  font-family: "Source Code Pro";
-  font-weight: 400;
-  font-style: normal;
+.project-section-title {
+  margin-top: 16px;
 }
