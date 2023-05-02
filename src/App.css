@@ -110,9 +110,10 @@ li {
   font-size: 12pt;
 }
 
-.introduction{
+.introduction {
   font-size: 16px;
 }
+
 /*** categorial blocks ***/
 
 .main-block {
@@ -244,30 +245,11 @@ li {
 }
 
 .project-item::after {
-  /* border: 1px solid green; */
-  /* extends the decorator line */
   height: calc(var(--row-blocks-padding-top) * 5);
-  /* position: relative; */
-  /* top: calc(-1 * var(--row-blocks-padding-top)); */
-  /* XXX: 0.5px for aligning fx printing */
-  /* left: calc(-1 * var(--decorator-horizontal-margin)); */
   display: block;
-  /* border-left: var(--decorator-border); */
-  /* z-index: 0; */
-  /* line-height: 0; */
-  /* font-size: 0; */
   content: ' ';
   width: 100%;
 }
-
-/* .main-block:not(.concise) .details div {
-  /* margin: 0.18in 0 0.1in 0; */
-
-/* } */
-
-/* .main-block:not(.concise) .blocks:last-child .details div {
-  margin-bottom: 0;
-}  */
 
 .main-block.concise .details div:not(.concise) {
   /* use padding to work around the fact that margin doesn't affect floated
@@ -376,4 +358,13 @@ li {
 
 .project-section-title {
   margin-top: 16px;
+}
+
+/* COVER LETTER */
+
+.cover-letter-title {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
